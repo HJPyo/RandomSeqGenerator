@@ -1,32 +1,54 @@
 /* id */
-
-#outter{
-    position: relative;
-}
-
+#outter{ position: relative; }
 #field{
     position: relative;
     overflow: hidden;
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(81,124,211,1) 100%);
 }
+#modal div div div{ border: none !important; }
 
 /* layout */
-
-.my-wmax{
-    width: 100%;
-}
-
-.my-hmax{
-    height: 100%;
-}
-
-.my-hmin{
-    height: 600px;
-}
+.my-wmax{ width: 100%; }
+.my-hmax{ height: 100%; }
+.my-hmin{ height: 600px; }
 
 /* color */
+.bd-black{ border: 1px black solid; }
+.bd-none{ border: none; }
 
-.bd-black{
-    border: 1px black solid;
+/* ect */
+#option div{
+    height: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#option div h5{
+    margin: 0;
+}
+
+#txt{
+    width: auto;
+    height: 100%;
+    padding: 5px;
+    border: 2px gray solid;
+    border-radius: 5px;
+}
+#chk1{ display: none; }
+#chk2{ display: none; }
+#lb1{ display: none; font-size: 12px; color: red; }
+#lb2{ display: none; font-size: 12px; color: red; }
+
+
+input + label {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 2px gray solid;
+    border-radius: 100%;
+	cursor: pointer;
+    transition: .2s;
+}
+input:checked + label{
+    border: 5px rgb(11, 94, 215) solid;
 }
