@@ -1,0 +1,32 @@
+/* id */
+
+#outter{
+    position: relative;
+}
+
+#field{
+    position: relative;
+    overflow: hidden;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(81,124,211,1) 100%);
+}
+
+/* layout */
+
+.my-wmax{
+    width: 100%;
+}
+
+.my-hmax{
+    height: 100%;
+}
+
+.my-hmin{
+    height: 600px;
+}
+
+/* color */
+
+.bd-black{
+    border: 1px black solid;
+}
