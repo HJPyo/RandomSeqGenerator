@@ -17,7 +17,7 @@
 .bd-black{ border: 1px black solid; }
 .bd-none{ border: none; }
 
-/* ect */
+/* modal */
 #option div{
     height: 50px;
     padding: 5px;
@@ -39,7 +39,6 @@
 #lb1{ display: none; font-size: 12px; color: red; }
 #lb2{ display: none; font-size: 12px; color: red; }
 
-
 input + label {
 	display: inline-block;
 	width: 20px;
@@ -51,4 +50,17 @@ input + label {
 }
 input:checked + label{
     border: 5px rgb(11, 94, 215) solid;
+}
+
+/* canvas */
+.launch{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateY(-90%) translateX(-50%);
+    width: 8vh;
+    height: 8vh;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 100%;
 }

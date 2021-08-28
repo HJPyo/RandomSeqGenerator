@@ -7,18 +7,25 @@ myModal.toggle();
 var seqArray = [];
 
 function start() {
-	var formData = option.txt.value;
-	if (formData * 0 === 0 && formData != "") {
-		if (3 <= formData && formData <= 10000) {
+	var num = option.txt.value;
+	var chk1 = option.chk1.checked;
+	var chk2 = option.chk2.checked;
+	if (num * 0 === 0 && num != "") {
+		if (3 <= num && num <= 10000) {
 			myModal.toggle();
-			for(var i = 0; i < formData; i++) seqArray.push(i + 1);
-			for(var i = 0; i < formData; i++){
-				var rand = Math.floor(Math.random() * formData);
+			for (var i = 0; i < num; i++) seqArray.push(i + 1);
+			for (var i = 0; i < num; i++) {
+				var rand = Math.floor(Math.random() * num);
 				var tmp = seqArray[i];
 				seqArray[i] = seqArray[rand];
 				seqArray[rand] = tmp;
 			}
-			console.log(seqArray);
+			if (chk2) {
+				var outter = document.getElementById('outter');
+				var inner = document.getElementById('field');
+				outter.className = 'd-flex flex-column justify-content-center vh-100';
+				inner.className = 'my-wmax my-hmax';
+			}
 		} else {
 			document.getElementById('lb1').style.display = 'none';
 			document.getElementById('lb2').style.display = 'block';
@@ -45,7 +52,7 @@ class cannonBall {
 	}
 	draw() {
 		var nx = this.x + (myCanvas.width / 2);
-		var ny = this.y + (myCanvas.height / 2) - 200 + (600 / this.scale);
+		var ny = this.y + (myCanvas.height / 5) + (600 / this.scale);
 		var radius = myCanvas.height / this.scale;
 		var gx = nx - radius;
 		var gy = ny - radius;
@@ -61,8 +68,26 @@ class cannonBall {
 	}
 }
 
+class ballNum {
+	constructor() {
+		this.x = 0;
+		this.y = 0;
+		this.scale = 20;
+		this.num = 'none';
+	}
+	draw() {
+		var sz = String(myCanvas.height / this.scale / 1.5);
+		ctx.font = sz + "px Arial";
+		var nx = this.x + (myCanvas.width / 2) - (ctx.measureText(String(this.num)).width / 2);
+		var ny = this.y + (myCanvas.height / 5) + (700 / this.scale);
+		ctx.fillStyle = 'yellow';
+		ctx.fillText(this.num, nx, ny);
+	}
+}
+
 var time = 0;
 var ball = new cannonBall;
+var number = new ballNum;
 
 function loop() {
 	requestAnimationFrame(loop);
@@ -71,10 +96,23 @@ function loop() {
 	ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
 
 	ball.draw();
+	number.draw();
 	if (ball.scale > 5) {
 		ball.scale -= 0.5;
+		number.scale -= 0.5;
 	}
 	time++;
 }
 
-loop();
+/* launch */
+
+var cnt = 0;
+function launch() {
+	if (cnt < seqArray.length) {
+		ball.scale = 20;
+		number.scale = 20;
+		number.num = seqArray[cnt];
+		if (cnt == 0) loop();
+		cnt++;
+	}
+}
