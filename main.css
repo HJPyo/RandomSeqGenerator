@@ -148,6 +148,7 @@ input:checked + label{
 
 @media screen and (max-width: 992px) {
     .log{ display: none; }
+    .reload{ bottom: .5rem; right: .5rem; }
 }
 
 @media screen and (max-width: 768px) {
