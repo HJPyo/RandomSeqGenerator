@@ -102,7 +102,6 @@ class cloud{
 	}
 }
 */
-var time = 0;
 var ball = new cannonBall;
 var number = new ballNum;
 //var _cloud = new cloud;
@@ -120,7 +119,6 @@ function loop() {
 		ball.scale -= 0.5;
 		number.scale -= 0.5;
 	}
-	time++;
 }
 
 /* launch */
