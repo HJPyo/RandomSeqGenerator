@@ -62,5 +62,95 @@ input:checked + label{
     height: 8vh;
     min-width: 50px;
     min-height: 50px;
+    background-color: rgb(255, 255, 0);
+    border: 2px black solid;
     border-radius: 100%;
+}
+
+.launch:hover{
+    background-color: rgb(235, 235, 0);
+}
+
+.launch:active{
+    background-color: rgb(215, 215, 0);
+}
+
+#cannon{
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15%;
+    height: 30%;
+    min-width: 200px;
+}
+#Lhill{
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    height: 30%;
+}
+#Rhill{
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    height: 30%;
+}
+
+/* ect */
+.font-dh{ font-family: 'Do Hyeon'; }
+
+.log{
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    width: 270px;
+    height: 480px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px black solid;
+    border-radius: 16px;
+}
+
+.log-title{
+    height: 70px;
+    margin: 0;
+    padding: 16px;
+    text-align: center;
+}
+
+.log-outter{
+    padding: 0 16px 8px 16px;
+    height: 410px;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+.log-outter::-webkit-scrollbar{
+    display: none;
+}
+
+.log-inner{
+    padding-bottom: 8px;
+    font-size: 20px;
+}
+
+.reload{
+    position: fixed;
+    bottom: 1.5rem;
+    right: 5rem;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.reload:hover{
+    color: red;
+}
+
+@media screen and (max-width: 992px) {
+    .log{ display: none; }
+}
+
+@media screen and (max-width: 768px) {
+    #Lhill{ display: none; }
+    #Rhill{ display: none; }
 }
