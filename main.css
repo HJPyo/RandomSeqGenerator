@@ -119,9 +119,10 @@ input:checked + label{
 }
 
 .log-outter{
-    padding: 0 16px 8px 16px;
-    height: 410px;
+    padding: 8px 16px 8px 16px;
+    height: 400px;
     margin: 0;
+    overflow: hidden;
     overflow-y: scroll;
 }
 
@@ -130,7 +131,7 @@ input:checked + label{
 }
 
 .log-inner{
-    padding-bottom: 8px;
+    margin-bottom: 8px;
     font-size: 20px;
 }
 
@@ -148,7 +149,7 @@ input:checked + label{
 
 @media screen and (max-width: 992px) {
     .log{ display: none; }
-    .reload{ bottom: .5rem; right: .5rem; }
+    .reload{ bottom: .5rem; right: 1rem; }
 }
 
 @media screen and (max-width: 768px) {
